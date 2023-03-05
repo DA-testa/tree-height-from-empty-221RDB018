@@ -2,7 +2,6 @@
 def compute_height(n, lst):    
     max_height = 0
     # Your code here
-    stack = []
     visited = [0] * n
     level = [0] * n
 
@@ -10,7 +9,8 @@ def compute_height(n, lst):
         if visited[i] == 0:
             visited[i] = 1
             level[i] = 1
-            stack.append(i)
+            stack = [i]
+            
             while lst[i] != -1:
                 if visited[lst[i]] == 0:
                     visited[lst[i]] = 1
@@ -22,7 +22,6 @@ def compute_height(n, lst):
                     for j in stack:
                         level[j] += level[lst[i]]
                     lst[i] = -1
-            stack.clear()
 
     max_height = max(level)
     return max_height
