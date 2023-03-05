@@ -47,6 +47,7 @@ def main():
             filename = "test/" + filename
             f = open(filename)
             n = f.readline()
+            n = int(n)
             # print(n)
             input_t = f.readline()
             f.close()
