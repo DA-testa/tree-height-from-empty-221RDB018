@@ -5,7 +5,7 @@ def compute_height(n, lst):
     visited = [0] * n
     level = [0] * n
 
-    for i in range(n):
+    for i in range(0,n):
         if visited[i] == 0:
             visited[i] = 1
             level[i] = 1
